@@ -5,10 +5,44 @@
 <html>
     <head>
         <title>@title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href='@routes.WebJarAssets.at(WebJarAssets.locate("css/bootstrap.min.css"))'>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
     </head>
-    <body>
-        @content
+    <body ng-app="commApp">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Commissioning Demo</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="NavCtrl">
+                    <ul class="nav navbar-nav">
+                        <li ng-class="{active: isActive('/home')}"><a href="#/home">Home</a></li>
+                        <li ng-class="{active: isActive('/commission')}"><a href="#/commission">Commissioning</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+        <div class="container-fluid" ng-view>
+            @content
+        </div>
+        <script type="text/javascript" src='@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))'></script>
+        <script type="text/javascript" src='@routes.WebJarAssets.at(WebJarAssets.locate("bootstrap.min.js"))'></script>
+        <script type="text/javascript" src='@routes.WebJarAssets.at(WebJarAssets.locate("angular.min.js"))'></script>
+        <script type="text/javascript" src='@routes.WebJarAssets.at(WebJarAssets.locate("ui-bootstrap-tpls.min.js"))'></script>
+        <script type="text/javascript" src='@routes.WebJarAssets.at(WebJarAssets.locate("angular-route.min.js"))'></script>
+        <script type="text/javascript" src='@routes.Assets.at("javascripts/app.js")'></script>
+        <script type="text/javascript" src='@routes.Assets.at("javascripts/commissioning/controllers.js")'></script>
     </body>
 </html>
