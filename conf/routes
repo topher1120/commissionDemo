@@ -1,0 +1,19 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+# Commissioning process
+GET     /commissioning                              @controllers.Commissioning.index
+GET     /commissioning/checkConfig/:id              @controllers.Commissioning.checkConfig(id: String)
+GET     /commissioning/performCommission/:id        @controllers.Commissioning.performCommission(id: String)
+GET     /commissioning/findDiscoveredDevices/:id    @controllers.Commissioning.findDiscoveredDevices(id: String)
+
+# enable javascript routes for AJAX requests.
+GET         /javascriptRoutes        controllers.Application.javascriptRoutes
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /webjars/*file              controllers.WebJarAssets.at(file)
