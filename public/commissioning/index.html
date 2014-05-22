@@ -1,19 +1,15 @@
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-4 col-md-offset-1">
         <div class="div-bordered itemTitle">
-            <form class="form-horizontal">
+            <form role="form">
                 <fieldset>
                     <legend class="text-info" >Enter Gateway</legend>
-                    <div class="control-group">
-                        <label class="control-label" for="gatewayId">Gateway Id #</label>
-                        <div class="controls">
-                            <input type="text" name="gatewayId" id="gatewayId" ng-model="gatewayId" autofocus="autofocus">
-                        </div>
+                    <div class="form-group">
+                        <label for="gatewayId">Gateway Id #</label>
+                        <input type="text" class="form-control" name="gatewayId" id="gatewayId" ng-model="gatewayId" autofocus="autofocus">
                     </div>
-                    <div class="control-group">
-                        <div class="controls">
-                            <button class="span2 btn btn-primary" id="submit" value="Submit" ng-click="submitGateway(gatewayId)" >Submit</button>
-                        </div>
+                    <div class="form-group">
+                        <button class="span2 btn btn-primary" id="submit" value="Submit" ng-click="submitGateway(gatewayId)" >Submit</button>
                     </div>
                 </fieldset>
             </form>
