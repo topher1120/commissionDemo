@@ -5,7 +5,6 @@ import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.WebSocket;
-import views.html.commissioning.index;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -20,7 +19,7 @@ public class Commissioning extends Controller {
     private final ExecutorService executorService = Executors.newSingleThreadExecutor();
 
     public Result index() {
-        return ok(index.render());
+        return ok();
     }
 
     /**

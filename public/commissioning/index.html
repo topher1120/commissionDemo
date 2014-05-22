@@ -1,1 +1,22 @@
-Commissioning index from Angular
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="div-bordered itemTitle">
+            <form class="form-horizontal">
+                <fieldset>
+                    <legend class="text-info" >Enter Gateway</legend>
+                    <div class="control-group">
+                        <label class="control-label" for="gatewayId">Gateway Id #</label>
+                        <div class="controls">
+                            <input type="text" name="gatewayId" id="gatewayId" ng-model="gatewayId" autofocus="autofocus">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button class="span2 btn btn-primary" id="submit" value="Submit" ng-click="submitGateway(gatewayId)" >Submit</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

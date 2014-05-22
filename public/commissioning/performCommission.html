@@ -1,0 +1,14 @@
+<div class="well">
+    <small class="pull-right">Gateway: {{gatewayId}}</small>
+    <h2>Gateway Commissioning Report</h2>
+    <div ng-repeat="config in configurations" class="row-fluid">
+        <div class="span10 offset1">
+            <div class="text-info">{{config.title}}</div>
+            <div>{{config.description}}</div>
+        </div>
+        <div class="span10 offset1">
+            <hr class="div-bordered">
+        </div>
+    </div>
+</div>
+<div ng-include="'/assets/commissioning/wizardNav.html'"></div>

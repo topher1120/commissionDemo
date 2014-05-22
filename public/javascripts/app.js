@@ -1,20 +1,22 @@
-var commApp = angular.module('commApp', ['ngRoute', 'commissioningControllers']);
+var commApp = angular.module('commApp', ['ngRoute', 'commissioningModule']);
 
 commApp.config(['$routeProvider',
     function($routeProvider){
         $routeProvider.when('/home', {
             templateUrl: '/assets/index.html', controller: 'HomeCtrl'
-        }).when('/commission', {
-            templateUrl: '/assets/commissioning/index.html', controller: 'CommIndexCtrl'
         }).otherwise({
             redirectTo: '/home'
         });
     }
 ]);
 
-commApp.controller('HomeCtrl', ['$log',
-    function($log){
+commApp.controller('HomeCtrl', ['$scope', '$location', '$log',
+    function($scope, $location, $log){
         $log.debug("HomeCtrl loaded");
+        $scope.startCommissioning = function(){
+            $log.debug("chaning path to /commission");
+            $location.path("/commission");
+        }
     }
 ]);
 
