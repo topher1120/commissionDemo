@@ -43,18 +43,18 @@ public class Commissioning extends Controller {
 
                         writeEvent(out, "Checking Firmware");
 
-                        sleepFor5();
+                        sleepFor3();
 
                         writeNode(out, Json.toJson(new ConfigResult("Firmware upgrade",
                                 "Gateway has version 3.1.0.1, current is 3.2.1.1.  A firmware upgrade will be scheduled.", "01c")));
 
                         writeEvent(out, "Checking Gateway Clusters");
 
-                        sleepFor5();
+                        sleepFor3();
 
                         writeNode(out, Json.toJson(new ConfigResult("On/Off Clusters", "Need to create Gateway On/Off Clusters", "111")));
 
-                        sleepFor5();
+                        sleepFor3();
 
                         writeNode(out, Json.toJson(new ConfigResult("Tstat Cluster", "Need to create Tstat Cluster", "011")));
                         writeEvent(out, "Done Checking System");
@@ -85,18 +85,18 @@ public class Commissioning extends Controller {
                     public void run() {
                         writeEvent(out, "Scheduling Firmware");
 
-                        sleepFor5();
+                        sleepFor3();
 
                         writeNode(out, Json.toJson(new ConfigResult("Firmware upgrade",
                                 "A firmware upgrade has been scheduled for ", "01c")));
 
                         writeEvent(out, "Adding On/Off Clusters");
 
-                        sleepFor5();
+                        sleepFor3();
 
                         writeNode(out, Json.toJson(new ConfigResult("On/Off Clusters", "On/Off Cluster added successfully", "111")));
                         writeEvent(out, "Adding Tstat Cluster");
-                        sleepFor5();
+                        sleepFor3();
 
                         writeNode(out, Json.toJson(new ConfigResult("Tstat Cluster", "Tstat Cluster added successfully", "011")));
                         writeEvent(out, "Done Checking System");
@@ -116,7 +116,7 @@ public class Commissioning extends Controller {
                 executorService.execute(new Runnable() {
                     @Override
                     public void run() {
-                        sleepFor5();
+                        sleepFor3();
                         Collection<CommissioningDevice> devices = new ArrayList<>();
                         devices.add(new CommissioningDevice("00:07:A6:00:C5:8A", "00:C5:8A:00:91:AA:D2:90:BC:68", "available"));
                         devices.add(new CommissioningDevice("00:1B:C5:00:B0:00:BD:E4", "1C:60:6C:F0:69:64:F3:30", "available"));
@@ -137,10 +137,10 @@ public class Commissioning extends Controller {
         out.write(jsonNode);
     }
 
-    private void sleepFor5() {
+    private void sleepFor3() {
 
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
