@@ -22,8 +22,11 @@ commApp.controller('HomeCtrl', ['$scope', '$location', '$log',
 
 commApp.controller('NavCtrl', ['$scope', '$location', '$log',
     function($scope, $location, $log){
-        $scope.isActive = function(viewLocation){
+        $scope.isActive = function(viewLocation, beginsWith){
             $log.debug("determining active for "+viewLocation);
+            if(beginsWith){
+                return $location.path().lastIndexOf(viewLocation, 0) === 0;
+            }
             return viewLocation === $location.path();
         };
     }]);
