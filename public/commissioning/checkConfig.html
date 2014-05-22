@@ -1,29 +1,33 @@
 <div class="well">
     <small class="pull-right">Gateway: {{gatewayId}}</small>
     <h2>Required Actions</h2>
-    <div class="row-fluid">
-        <div class="span10 offset1">
-            <div class="text-info">Gateway Timezone</div>
-            <div>Please enter the timezone:
-                <select id="gwTimezone" ng-model="gwTimezone" >
-                    <option >America/Denver</option>
-                </select>
-                <label class="checkbox">
-                    <input type="checkbox" id="setDST" ng-model="setDST" value="false" /> Shift time for Daylight Savings.
-                </label>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="row">
+                <div class="text-info">Gateway Timezone</div>
+                <div>Please enter the timezone:
+                    <select id="gwTimezone" ng-model="gwTimezone" >
+                        <option >America/Denver</option>
+                    </select>
+                    <label class="checkbox">
+                        <input type="checkbox" id="setDST" ng-model="setDST" value="false" /> Shift time for Daylight Savings.
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <hr class="div-bordered">
             </div>
         </div>
-        <div class="span10 offset1">
-            <hr class="div-bordered">
-        </div>
     </div>
-    <div ng-repeat="config in configurations" class="row-fluid">
-        <div class="span10 offset1">
-            <div class="text-info">{{config.title}}</div>
-            <div>{{config.description}}</div>
-        </div>
-        <div class="span10 offset1">
-            <hr class="div-bordered">
+    <div ng-repeat="config in configurations" class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="row">
+                <div class="text-info">{{config.title}}</div>
+                <div>{{config.description}}</div>
+            </div>
+            <div class="row">
+                <hr class="div-bordered">
+            </div>
         </div>
     </div>
 

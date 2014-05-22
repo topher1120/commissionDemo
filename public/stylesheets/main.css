@@ -1,0 +1,7 @@
+.div-bordered {
+    border: 1px solid #DDD;
+    border-collapse: separate;
+    -webkit-border-radius: 4px;
+    -mox-border-radius: 4px;
+    border-radius: 4px;
+}
