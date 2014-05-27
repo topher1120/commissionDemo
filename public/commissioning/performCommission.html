@@ -6,15 +6,19 @@
             <hr class="div-bordered">
         </div>
     </div>
-    <div ng-repeat="config in configurations" class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="row">
-                <div class="text-info">{{config.title}}</div>
-                <div>{{config.description}}</div>
-            </div>
-            <div class="row">
-                <hr class="div-bordered">
-            </div>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1 table-responsive">
+            <table class="table table-condensed">
+                <tbody>
+                    <tr ng-repeat="config in configurations">
+                        <td><span class="glyphicon glyphicon-ok"></span></td>
+                        <td>
+                            <div class="text-info">{{config.title}}</div>
+                            <div>{{config.description}}</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     <div class="row">

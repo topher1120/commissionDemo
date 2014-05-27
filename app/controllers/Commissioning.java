@@ -1,6 +1,8 @@
 package controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -88,7 +90,7 @@ public class Commissioning extends Controller {
                         sleepFor3();
 
                         writeNode(out, Json.toJson(new ConfigResult("Firmware upgrade",
-                                "A firmware upgrade has been scheduled for ", "01c")));
+                                "A firmware upgrade has been scheduled for "+getMidnight(), "01c")));
 
                         writeEvent(out, "Adding On/Off Clusters");
 
@@ -106,6 +108,11 @@ public class Commissioning extends Controller {
                 });
             }
         };
+    }
+
+    private String getMidnight() {
+        DateTime midnight = DateTime.now(DateTimeZone.forID("America/Denver")).plusDays(1).withTimeAtStartOfDay();
+        return midnight.toString("hh:mm a MMMM dd z");
     }
 
     public WebSocket<JsonNode> findDiscoveredDevices(final String gatewayId) {
