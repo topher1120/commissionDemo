@@ -72,12 +72,14 @@ commModule.controller('CheckConfigCtrl', ['$scope', 'CommissionService', '$locat
 
         $scope.cancel = function(){
             $log.debug("cancel called");
-            $location.path("/index");
+            $location.path("/commission");
+            $location.replace();
         };
 
         $scope.next = function(){
             $log.debug("next called");
-            $location.path("/commission/performCommission")
+            $location.path("/commission/performCommission");
+            $location.replace();
         }
     }
 ]);
@@ -119,14 +121,10 @@ commModule.controller('PerformCommissionCtrl', ['$scope', 'CommissionService', '
             progressBar.close();
         };
 
-        $scope.cancel = function(){
-            $log.debug("cancel called");
-            $location.path("/checkConfig");
-        };
-
         $scope.next = function(){
             $log.debug("next called");
-            $location.path("/commission/selectDevices");
+            $location.path("/commission");
+            $location.replace();
         };
     }
 ]);
